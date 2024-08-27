@@ -36,16 +36,19 @@ client.on('guildMemberAdd', (m) => {
     }
 })
 
-client.on('messageCreate', async (m) => {
-    if (m.content === "register") {
-        const registeredid = m.guild.roles.cache.get(config.registeredrole)
-        const member = m.guild.members.cache.get(m.author.id)
 
-        if (registeredid) {
-            member.roles.add(registeredid)
-            m.reply('Successfully registered.')
-        } else {
-            console.log('Registered role not found.')
+client.on('messageCreate', async (m) => {
+    if (m.channel.id === config.welcomechid) {
+        if (m.content === "register") {
+            const registeredid = m.guild.roles.cache.get(config.registeredrole)
+            const member = m.guild.members.cache.get(m.author.id)
+        
+            if (registeredid) {
+                member.roles.add(registeredid)
+                m.reply('Successfully registered.')
+            } else {
+                console.log('Registered role not found.')
+            }
         }
     }
 })
