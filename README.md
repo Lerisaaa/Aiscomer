@@ -1,6 +1,6 @@
 ## About Aiscomer
 
-Thats just a simple welcomer bot, thanks if you using the bot.
+Thats just a simple welcomer bot, thanks if you using the code.
 
 ## Config Information
 
